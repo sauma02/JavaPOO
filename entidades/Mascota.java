@@ -19,10 +19,10 @@ public class Mascota {
     private int edad;
     private boolean cola;
     private String raza;
-    
+    private int energia;
     //Para crear un constructor public se declara public con el nombre de la clase
     public Mascota(){
-        
+        this.energia=1000;
     }
     //Constructor con argumentos
     public Mascota(String nombre, String apodo, String tipo){
@@ -33,7 +33,7 @@ public class Mascota {
         if(tipo.equals("Perro") || tipo.equals("Gato") || tipo.equals("Loro")|| tipo.equals("Conejo") || tipo.equals("Carpincho")){
             this.tipo = tipo;
         }
-            
+            this.energia = 1000;
         this.apodo = apodo;
     }
 
@@ -45,6 +45,7 @@ public class Mascota {
         this.edad = edad;
         this.cola = cola;
         this.raza = raza;
+        this.energia = 1000;
     }
     //Crear SET, establece el valor, se crea como public para poder acceder por fuera de la clase
     //Los metodos inician en minuscula
@@ -79,6 +80,33 @@ public class Mascota {
     public void setRaza(String raza) {
         this.raza = raza;
     }
+    //Comentar metodos o funciones
+    //Funcion Destinada para pasear
+    /**
+     * 
+     * 
+     * @param energiaRestar
+     * @return energia
+     */
+    public int pasear(int energiaRestar){
+        energia = energia - energiaRestar;
+        return energia;
+        
+     }
+    //Funcion destinada a pasear por vueltas
+    /**
+     * 
+     * @param energiaRestar
+     * @param vueltas
+     * @return energia
+     */
+    public int pasear(int energiaRestar, int vueltas){
+        for (int i = 0; i < vueltas; i++) {
+            energia -= energiaRestar;
+        }
+        return energia;
+        
+     }
     
     //Crear GET, se crea como public para poder acceder por fuera de la clase, se establece sin argumentos
     //pero sin void pero si el tipo de variable, ya que devuelve un valor, en este caso el nombre, se establece return nombre
@@ -116,7 +144,7 @@ public class Mascota {
     //Esta funcion devuelve un mensaje formateadi segun cada mascota, es decir, segun cada objeto, 
     //ademas ya mostraria los atributos y no donde esta alojado
     public String toString() {
-        return "Mascota{" + "nombre=" + nombre + ", apodo=" + apodo + ", tipo=" + tipo + ", color=" + color + ", edad=" + edad + ", cola=" + cola + ", raza=" + raza + '}';
+        return "Mascota{" + "nombre=" + nombre + ", apodo=" + apodo + ", tipo=" + tipo + ", color=" + color + ", edad=" + edad + ", cola=" + cola + ", raza=" + raza + ", Energia=" + energia +'}';
     }
     
     
