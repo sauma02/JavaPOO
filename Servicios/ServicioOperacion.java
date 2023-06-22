@@ -27,4 +27,20 @@ public class ServicioOperacion {
         int resta = o1.getNumero1()-o1.getNumero2();
         return resta;
     }
+    public void division(Operacion o1){
+        
+       
+        if(o1.getNumero2() == 0){
+            System.out.println("No se puede dividir por 0");
+            
+        }else{
+            int div = o1.getNumero1()/o1.getNumero2();
+            System.out.println("La division equivale a: "+div);
+        }
+        
+    }
+    public int multiplicacion(Operacion o1){
+        int multi = o1.getNumero1()*o1.getNumero2();
+        return multi;
+    }
 }

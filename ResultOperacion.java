@@ -8,6 +8,9 @@ package EjerciciosPOO;
  *
  * @author Admin
  */
+import EjerciciosPOO.Entidades.Operacion;
+import EjerciciosPOO.Servicios.ServicioOperacion;
+import java.util.Scanner;
 public class ResultOperacion {
 
     /**
@@ -15,6 +18,13 @@ public class ResultOperacion {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Operacion o1 = new Operacion();
+        ServicioOperacion so = new ServicioOperacion();
+        so.crearOperacion(o1);
+        System.out.println("La suma equivale a: "+so.sumar(o1));
+        System.out.println("La resta equivale a: "+so.restar(o1));
+        so.division(o1);
+        System.out.println("La multiplicacion equivale a: "+so.multiplicacion(o1));
     }
     
 }
