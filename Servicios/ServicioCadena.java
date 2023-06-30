@@ -44,12 +44,61 @@ public class ServicioCadena {
     public void revertirFrase(Cadena c1){
         String frase = c1.getFrase();
         char arr [] = new char[frase.length()];
-         for (int i = 0; i < arr.length; i++) {
+        System.out.println("\nFrase Revertida");
+         for (int i = arr.length-1; i >= 0 ; i--) {
+            arr[i] += frase.charAt(i);
+             System.out.print(arr[i]);
+        }
+         System.out.println("\n");
+    }
+    public void vecesRepetido(Cadena c1, String letra){
+        String frase = c1.getFrase();
+        char let = letra.toLowerCase().charAt(0);
+        int cont = 0;
+       
+        char arr[] = new char[frase.length()];
+        for (int i = 0; i < arr.length; i++) {
             arr[i] = frase.charAt(i);
         }
-          for (int i = 0; i < frase.length(); i++) {
-            frase = frase.substring(arr.length-1);
-              System.out.print(frase);
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] == let){
+                cont++;
+            }
+        }
+        System.out.print("\nLa letra "+letra+" se encuentra "+cont+" vez(ces)");
+    }
+    public void compararLongitud(Cadena c1, String frase2){
+        String frase = c1.getFrase();
+        int frase1 = frase.length();
+        int frase2l = frase2.length();
+        
+        if(frase1 > frase2l){
+            System.out.println("La frase de la cadena es mayor a la ingresada por el usuario");
+        }else if(frase1 == frase2l){
+            System.out.println("Las dos frases tienen la misma longitud");
+        }else{
+            System.out.println("La frase ingresada por el usuario es mayor que la establecida");
         }
     }
+    public void unirFrases(Cadena c1, String frase2){
+        String frase = c1.getFrase();
+        System.out.println(c1.getFrase()+frase2);
+    }
+    public void reemplazar(Cadena c1, String letra){
+        String frase = c1.getFrase();
+        char let = letra.toLowerCase().charAt(0);
+        char arr[] = new char[frase.length()];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = frase.charAt(i);
+        }
+        System.out.println("\n");
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] =='a'){
+                arr[i] = let;
+                
+            }
+            System.out.println(arr[i]);
+        }
+    }
+    
 }

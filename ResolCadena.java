@@ -6,6 +6,7 @@ package EjerciciosPOO;
 
 import EjerciciosPOO.Entidades.Cadena;
 import EjerciciosPOO.Servicios.ServicioCadena;
+import java.util.Scanner;
 
 /**
  *
@@ -17,11 +18,23 @@ public class ResolCadena {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String frase = "hola";
+        String frase = "casa blanca";
+        Scanner leer = new Scanner(System.in);
+        
         Cadena c1 = new Cadena(frase, frase.length());
         ServicioCadena sc = new ServicioCadena();
         sc.mostrarVocales(c1);
         sc.revertirFrase(c1);
+        System.out.println("Ingrese la letra que desea buscar");
+        String letra = leer.nextLine();
+        sc.vecesRepetido(c1, letra);
+        System.out.println("Ingrese la frase a la que desea comparar la longitud");
+        String frase2 = leer.nextLine();
+        sc.compararLongitud(c1, frase2);
+        sc.unirFrases(c1, frase2);
+        System.out.println("Ingrese el caracter por el que desea reemplazar la letra a");
+        String let = leer.nextLine();
+        sc.reemplazar(c1, letra);
     }
     
 }
