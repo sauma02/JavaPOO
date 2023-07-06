@@ -5,6 +5,7 @@
 package EjerciciosPOO.Servicios;
 
 import EjerciciosPOO.Entidades.Cadena;
+import java.util.Scanner;
 
 /**
  *
@@ -12,7 +13,7 @@ import EjerciciosPOO.Entidades.Cadena;
  */
 public class ServicioCadena {
     Cadena c1 = new Cadena();
-    
+    Scanner leer = new Scanner(System.in);
     public void mostrarVocales(Cadena c1){
         int cont = 0;
         String frase = c1.getFrase();
@@ -65,7 +66,7 @@ public class ServicioCadena {
                 cont++;
             }
         }
-        System.out.print("\nLa letra "+letra+" se encuentra "+cont+" vez(ces)");
+        System.out.print("\nLa letra "+letra+" se encuentra "+cont+" vez(ces)\n");
     }
     public void compararLongitud(Cadena c1, String frase2){
         String frase = c1.getFrase();
@@ -73,15 +74,16 @@ public class ServicioCadena {
         int frase2l = frase2.length();
         
         if(frase1 > frase2l){
-            System.out.println("La frase de la cadena es mayor a la ingresada por el usuario");
+            System.out.println("La frase de la cadena es mayor a la ingresada por el usuario\n");
         }else if(frase1 == frase2l){
-            System.out.println("Las dos frases tienen la misma longitud");
+            System.out.println("Las dos frases tienen la misma longitud\n");
         }else{
-            System.out.println("La frase ingresada por el usuario es mayor que la establecida");
+            System.out.println("La frase ingresada por el usuario es mayor que la establecida\n");
         }
     }
     public void unirFrases(Cadena c1, String frase2){
         String frase = c1.getFrase();
+        System.out.println("Las frases unidas ");
         System.out.println(c1.getFrase()+frase2);
     }
     public void reemplazar(Cadena c1, String letra){
@@ -93,12 +95,17 @@ public class ServicioCadena {
         }
         System.out.println("\n");
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i] =='a'){
+            if(arr[i] == 'a' || arr[i] == 'A'){
                 arr[i] = let;
-                
+                System.out.print(arr[i]);
+            }else{
+                System.out.print(arr[i]);
             }
-            System.out.println(arr[i]);
+            
         }
+       String string = new String(arr);
+       c1.setFrase(string);
+       
     }
-    
+
 }

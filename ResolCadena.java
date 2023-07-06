@@ -25,16 +25,17 @@ public class ResolCadena {
         ServicioCadena sc = new ServicioCadena();
         sc.mostrarVocales(c1);
         sc.revertirFrase(c1);
-        System.out.println("Ingrese la letra que desea buscar");
+        System.out.println("\nIngrese la letra que desea buscar");
         String letra = leer.nextLine();
         sc.vecesRepetido(c1, letra);
-        System.out.println("Ingrese la frase a la que desea comparar la longitud");
+        System.out.println("\nIngrese la frase a la que desea comparar la longitud");
         String frase2 = leer.nextLine();
         sc.compararLongitud(c1, frase2);
         sc.unirFrases(c1, frase2);
-        System.out.println("Ingrese el caracter por el que desea reemplazar la letra a");
+        System.out.println("\nIngrese el caracter por el que desea reemplazar la letra a");
         String let = leer.nextLine();
-        sc.reemplazar(c1, letra);
+        sc.reemplazar(c1, let);
+       
     }
     
 }
