@@ -20,10 +20,14 @@ public class Ej1MascotaAPP {
         //Creamos el servicio
        ej1ServicioMascota sm = new ej1ServicioMascota();
        //Se crean dos mascotas
-       sm.crearMascota();
-       sm.crearMascota();
+//       sm.crearMascota();
+//       sm.crearMascota();
        //Se muestran las mascotas
-       sm.mostrarMascotas();
+//       sm.mostrarMascotas();
+    sm.fabricaDeMascotasChiquitos(140);
+    sm.mostrarMascotas();
+    sm.fabricaMascota(2);
+    sm.mostrarMascotas();
        
     }
     
