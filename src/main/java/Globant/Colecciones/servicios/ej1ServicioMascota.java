@@ -134,7 +134,63 @@ public class ej1ServicioMascota {
                   System.out.println(mascotaCreada.toString());
               }
               
+          
+              
               
               
           }
+          
+//          //Metodo 1
+//          //TODO Añadir try and catch
+//          public void actualizarMascoya(int index){
+//              //Busca dentro del objeto mascota el indice indicado por el usuario, cambia su valor con un set y lo ingresa denuevo en el objeto
+//              Mascota m = mascotas.get(index);
+//              //Cambia el apodo 
+//              m.setApodo("Roberto");
+//              
+//          }
+          //Metodo 2
+          //Recibe el indice igual por parametro, llama a la funcion crear mascota
+          public void actualizarMascota(int index){
+              //Si el indice es igual al tamaño del arraylist
+              if(index >= mascotas.size() - 1){
+              System.out.println("");
+              System.out.println("Actualizando......");
+              Mascota m = crearMascota();
+              //Despues de crear la nueva mascota, se utiliza un set, se ingresa el indice a cambiar y el objeto por el cual se va a cambiar
+              
+              mascotas.set(index, m);
+              //Sino mostrar que el indice no existe o es erroneo
+              }else{
+                  System.out.println("Fallo al actualizar: El Indice es erroneo");
+          }
+          }
+          //Se crear una funcion para eliminar, recibiendo un indice
+          public void eliminarMascota(int indice){
+              //Se utiliza la funcion remove en base al indice
+              if(indice <= mascotas.size()-1){
+              mascotas.remove(indice);
+              }else{
+                  System.out.println("Fallo al eliminar: El indice es erroneo");
+              }
+          }
+         public void eliminarPorNombre(String nombre){
+             for (int i = 0; i < mascotas.size(); i++) {
+                 Mascota m = mascotas.get(i);
+                 if(m.getNombre().equals(nombre)){
+                     mascotas.remove(m);
+                 }
+                 
+             }
+              
+         }
+         public void actualizarMascotaPorNombre(String nombre_viejo, String nombre_nuevo){
+             for (int i = 0; i < mascotas.size(); i++) {
+                 Mascota m = mascotas.get(i);
+                 if(m.getNombre().equals(nombre_viejo)){
+                     m.setNombre(nombre_nuevo);
+                 }
+                 
+             }
+         }
 }
