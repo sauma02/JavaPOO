@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package Globant.Colecciones;
-
+import Globant.Colecciones.entidades.Alumno;
 import Globant.Colecciones.servicios.ServicioAlumno;
 
 /**
@@ -18,7 +18,9 @@ public class Ej3Colecciones {
     public static void main(String[] args) {
         ServicioAlumno sa = new ServicioAlumno();
         
-        sa.crearAlumno();
+      sa.crearAlumno();
+      sa.notaFinal();
+        
     }
     
 }

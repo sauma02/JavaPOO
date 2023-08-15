@@ -17,37 +17,63 @@ import java.util.Scanner;
 public class ServicioAlumno {
     Scanner leer = new Scanner(System.in);
     private ArrayList<Alumno> alumnos = new ArrayList();
-    private List<Integer> notas = Arrays.asList(new Integer [3]);
+    
+    Integer [] nota = new Integer[3];
     public void crearAlumno(){
         boolean flag = true;
         
+        
         while(flag == true){
-            System.out.println("Ingrese el nombre del alumno o escriba 'salir' para cerrar el programa");
-            String nombre = leer.nextLine();
-            String salir = "salir";
-            if(nombre.equalsIgnoreCase(salir)){
-                flag = false;
-                break;
-            }else{
-                boolean flag1 = true;
+            System.out.println("Ingrese el nombre del alumno");
+            String nombre = leer.next();
+            
+                int cont = 0;
+                List<Integer> notas = new ArrayList(Arrays.asList(nota) );
                 System.out.println("Ingrese las notas del alumno");
-                for (int i = 0; i < notas.size(); i++) {
-                    Integer notas1 = leer.nextInt();
-                   notas.add(i, notas1);
-                    if(i == 3){
-                        flag1 = false;
+                for (int i = 0; i < nota.length; i++) {
+                    nota[i] = leer.nextInt();
+                   notas.add(i, nota[i]);
+                    if(i == 2){
+                        cont = 1;
                     }
                 }
-               
                  Alumno m = new Alumno(nombre, notas);
+                alumnos.add(m);
                  System.out.println("Escriba 'y' para crear otro alumno, o 'salir' para salir del programa");
-                 String op = leer.nextLine();
-                 if(op.equalsIgnoreCase(salir)){
-                     flag = false;
-                     break;
-                 }else{
-                     flag = true;
-                 }
+                  String op = leer.next();
+                 String y = "y";
+                 String salir = "salir";
+          
+                  if(op.equalsIgnoreCase(salir)){
+                      System.out.println("Saliendo..");
+                      
+                flag = false;
+                break;
+                
+                    }else if(op.equals(y)){
+                    flag = true;
+                        }
+        }      
+    }
+    public int notaFinal(){
+        Alumno m = new Alumno();
+        System.out.println("Ingrese el nombre del alumno a calcular");
+        String nombre = leer.next();
+        if(nombre.equals(alumnos.contains(m.getNombre()))){
+           List<Integer> notaFin = m.getNotas();
+           int cont = 0;
+           int sum = 0;
+            for (Integer i : notaFin) {
+                sum += i;
+            }
+            System.out.println("El promedio final es:");
+            return sum/3;
+        }else{
+            int error = 37703;
+            return error;
+        }
+    }
+}
                
                 
                 
@@ -56,11 +82,11 @@ public class ServicioAlumno {
                 
               
                 
-            }
+            
                 
-            }
             
             
-        }
-    }
+            
+        
+    
 
