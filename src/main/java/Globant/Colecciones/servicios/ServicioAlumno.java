@@ -16,6 +16,7 @@ import java.util.Scanner;
  */
 public class ServicioAlumno {
     Scanner leer = new Scanner(System.in);
+    
     private ArrayList<Alumno> alumnos = new ArrayList();
     
     Integer [] nota = new Integer[3];
@@ -38,6 +39,7 @@ public class ServicioAlumno {
                     }
                 }
                  Alumno m = new Alumno(nombre, notas);
+                 
                 alumnos.add(m);
                  System.out.println("Escriba 'y' para crear otro alumno, o 'salir' para salir del programa");
                   String op = leer.next();
@@ -53,13 +55,15 @@ public class ServicioAlumno {
                     }else if(op.equals(y)){
                     flag = true;
                         }
-        }      
+                  
+        } 
+        
     }
     public int notaFinal(){
         Alumno m = new Alumno();
         System.out.println("Ingrese el nombre del alumno a calcular");
         String nombre = leer.next();
-        if(nombre.equals(alumnos.contains(m.getNombre()))){
+        if(nombre.equals(alumnos.equals(m.getNombre()))){
            List<Integer> notaFin = m.getNotas();
            int cont = 0;
            int sum = 0;

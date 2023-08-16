@@ -16,10 +16,11 @@ public class Ej3Colecciones {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Alumno m = new Alumno();
         ServicioAlumno sa = new ServicioAlumno();
         
       sa.crearAlumno();
-      sa.notaFinal();
+      sa.notaFinal(m);
         
     }
     
