@@ -4,6 +4,7 @@
  */
 package Globant.Colecciones.entidades;
 
+import POO_programacion.entidades.Mascota;
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,27 +19,10 @@ public class Alumno {
     public Alumno() {
     }
 
-    public Alumno(String nombre, List<Integer> notas) {
-        this.nombre = nombre;
-        this.notas = notas;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public List<Integer> getNotas() {
-        return notas;
-    }
-
-    public void setNotas(List<Integer> notas) {
-        this.notas = notas;
-    }
-
+   
+//Se relacionan de manera simple declarando la mascota como atributo
+    //private ej1Mascota mascota;
+    private List<ej1Mascota> mascotas;
     
     
    

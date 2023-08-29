@@ -16,11 +16,10 @@ import java.util.Scanner;
  */
 public class ServicioAlumno {
     Scanner leer = new Scanner(System.in);
-    
     private ArrayList<Alumno> alumnos = new ArrayList();
     
     Integer [] nota = new Integer[3];
-    public void crearAlumno(){
+    public ArrayList<Alumno> crearAlumno(){
         boolean flag = true;
         
         
@@ -57,13 +56,13 @@ public class ServicioAlumno {
                         }
                   
         } 
-        
+        return alumnos;
     }
     public int notaFinal(){
-        Alumno m = new Alumno();
+        crearAlumno();
         System.out.println("Ingrese el nombre del alumno a calcular");
         String nombre = leer.next();
-        if(nombre.equals(alumnos.equals(m.getNombre()))){
+        if(nombre.equals(alumnos.get(0))){
            List<Integer> notaFin = m.getNotas();
            int cont = 0;
            int sum = 0;
